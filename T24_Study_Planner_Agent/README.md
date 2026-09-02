@@ -1,7 +1,7 @@
 # T24 — Study Planner Agent
 
 ## 1. Project goal
-This project implements the official CSE476 T24 topic, **Study Planner Agent**. The agent helps a student plan study blocks around real deadlines. It is built as a real agent with an LLM-driven plan-act loop, two callable tools, and session memory. The agent can add tasks, build a priority-first schedule, and use information from earlier turns when deciding what the student should study first.
+This project implements the official  T24 topic, **Study Planner Agent**. The agent helps a student plan study blocks around real deadlines. It is built as a real agent with an LLM-driven plan-act loop, two callable tools, and session memory. The agent can add tasks, build a priority-first schedule, and use information from earlier turns when deciding what the student should study first.
 
 ## 2. Tools and memory
 The two official tools are `add_task(name, due)` and `build_schedule()`. `add_task` validates and stores each task in session memory. `build_schedule` reads the remembered tasks, calculates days remaining, assigns urgency, sorts deadlines, and returns the recommended next task. Session memory also stores recent conversation turns, so a later request such as “what should I work on first?” can use deadlines from earlier turns rather than starting from zero.
