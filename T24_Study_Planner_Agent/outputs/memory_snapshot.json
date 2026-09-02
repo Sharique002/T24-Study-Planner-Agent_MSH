@@ -1,0 +1,19 @@
+{
+  "example": true,
+  "tasks": [
+    {
+      "name": "CSE476 Agentic AI project",
+      "due": "2026-09-15"
+    },
+    {
+      "name": "DBMS assignment",
+      "due": "2026-09-20"
+    },
+    {
+      "name": "AI viva",
+      "due": "2026-09-10"
+    }
+  ],
+  "conversation_turns": 6,
+  "note": "Example documentation snapshot. The live notebook produces its own snapshot."
+}

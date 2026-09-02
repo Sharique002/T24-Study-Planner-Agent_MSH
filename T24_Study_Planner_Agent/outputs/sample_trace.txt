@@ -1,0 +1,63 @@
+T24 STUDY PLANNER AGENT — SAMPLE TRACE
+NOTE: This is a representative trace for documentation. The live notebook generates its own current-date values.
+
+=== GOAL 1 ===
+User goal:
+Add CSE476 Agentic AI project due 2026-09-15 and DBMS assignment due 2026-09-20, then tell me what to study first.
+
+Step 1: TOOL CALL
+tool = add_task
+arguments = {"name": "CSE476 Agentic AI project", "due": "2026-09-15"}
+
+Step 1: TOOL RESULT
+{"status": "added", "task": "CSE476 Agentic AI project", "due": "2026-09-15"}
+
+Step 2: TOOL CALL
+tool = add_task
+arguments = {"name": "DBMS assignment", "due": "2026-09-20"}
+
+Step 2: TOOL RESULT
+{"status": "added", "task": "DBMS assignment", "due": "2026-09-20"}
+
+Step 3: TOOL CALL
+tool = build_schedule
+arguments = {}
+
+Step 3: TOOL RESULT
+{"status": "schedule_built", "tasks": [...], "recommendation": "CSE476 Agentic AI project"}
+
+Step 4: FINAL
+The CSE476 Agentic AI project should be first because its deadline is earlier.
+
+=== GOAL 2 ===
+User goal:
+Also add my AI viva due 2026-09-10 and rebuild my study plan.
+
+Step 1: TOOL CALL
+tool = add_task
+arguments = {"name": "AI viva", "due": "2026-09-10"}
+
+Step 1: TOOL RESULT
+{"status": "added", "task": "AI viva", "due": "2026-09-10"}
+
+Step 2: TOOL CALL
+tool = build_schedule
+arguments = {}
+
+Step 2: TOOL RESULT
+recommendation = "AI viva"
+
+=== GOAL 3 — MEMORY ===
+User goal:
+Which task should I work on first? I already gave you my deadlines earlier.
+
+Step 1: TOOL CALL
+tool = build_schedule
+arguments = {}
+
+Step 1: TOOL RESULT
+recommendation = "AI viva"
+
+=== FAILURE ===
+Input: 2026-02-30
+Result: Invalid due date '2026-02-30'. Use YYYY-MM-DD, for example 2026-09-15.

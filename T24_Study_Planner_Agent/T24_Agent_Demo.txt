@@ -1,0 +1,39 @@
+# T24 Agent Demo — readable notebook backup
+
+from agent import StudyPlannerAgent
+
+agent = StudyPlannerAgent()
+print("Agent ready.")
+
+print("\n=== GOAL 1: Add tasks and plan ===")
+print(agent.run(
+    "Add my CSE476 Agentic AI project due 2026-09-15 and my DBMS assignment due 2026-09-20. Then tell me what I should study first."
+))
+print("\nTRACE:")
+for item in agent.trace:
+    print(item)
+
+print("\n=== GOAL 2: New deadline, same memory ===")
+print(agent.run(
+    "Also add my AI viva due 2026-09-10 and rebuild my study plan."
+))
+print("\nTRACE:")
+for item in agent.trace:
+    print(item)
+
+print("\n=== GOAL 3: Memory test ===")
+print(agent.run(
+    "Which task should I work on first? I already gave you my deadlines earlier."
+))
+print("\nTRACE:")
+for item in agent.trace:
+    print(item)
+
+print("\n=== MEMORY SNAPSHOT ===")
+print(agent.memory.snapshot())
+
+print("\n=== FAILURE HANDLING ===")
+try:
+    agent.tools.add_task("Invalid Date Demo", "2026-02-30")
+except ValueError as exc:
+    print("Handled failure:", exc)

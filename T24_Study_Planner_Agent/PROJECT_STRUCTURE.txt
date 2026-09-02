@@ -1,0 +1,16 @@
+T24_Study_Planner_Agent/
+├── agent.py                 # LLM-driven plan-act loop + tool routing
+├── tools.py                 # Official T24 tools
+├── memory.py                # Session memory
+├── main.py                  # CLI demonstration
+├── T24_Agent_Demo.ipynb     # Required assessed notebook
+├── T24_Agent_Demo.txt       # Notebook cell backup / readable demo script
+├── README.md                # 3-paragraph project write-up + run steps
+├── PROJECT_REPORT.md        # Detailed documentation and viva preparation
+├── requirements.txt
+├── .env.example
+├── tests/
+│   └── test_tools.py
+└── outputs/
+    ├── sample_trace.txt
+    └── memory_snapshot.json
