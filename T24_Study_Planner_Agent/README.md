@@ -17,10 +17,5 @@ During development, an invalid date such as `2026-02-30` caused Python date pars
 5. Run `python main.py`.
 6. For the assessed demonstration, open `T24_Agent_Demo.ipynb` and **Run All**.
 
-## Assessment mapping
-- **Implementation (10):** `agent.py` contains the plan-act loop; `tools.py` contains the two working tools; `memory.py` provides session memory.
-- **Presentation (10):** `T24_Agent_Demo.ipynb` demonstrates 3 goals and prints the tool-call/tool-result trace.
-- **Viva (10):** the code is intentionally small enough to explain: model decides -> tool executes -> result returns -> model decides again; memory is written and read across turns.
-
 ## Important
 Do not commit `.env` or a real API token. `.env.example` is safe to submit.
